@@ -1,0 +1,37 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    
+}
+
+.pane {
+    -fx-background-color: #0BD46E; /* 50% opacity */
+
+ 
+}
+.button {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e6ebe7;
+    -fx-border-width: 1px;
+}
+
+.icons {
+    
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e6ebe7;
+    -fx-border-width: 1px;
+}
+
+.loginButton{
+    -fx-background-color: #0BD46E;
+    -fx-border-color: #0BD46E;
+    -fx-border-width: 1px;
+}
+
+.textHR {
+    
+    -fx-text-fill: White;
+   
+}

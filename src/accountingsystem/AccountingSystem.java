@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -22,6 +23,7 @@ public class AccountingSystem extends Application {
         try{
             Parent root = FXMLLoader.load(getClass().getResource("login/Login.FXML"));
             Scene scene = new Scene(root);
+            primaryStage.initStyle(StageStyle.UNDECORATED);
             primaryStage.setTitle("Login");
             primaryStage.setScene(scene);
             primaryStage.show();
