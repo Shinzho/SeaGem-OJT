@@ -1,14 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accountingsystem.dashboard.DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="644.0" prefWidth="1053.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accountingsystem.dashboard.DashboardController">
     <stylesheets>
-        <URL value="@dashboard.css"/>
+        <URL value="@dashboard.css" />
     </stylesheets>
+   <children>
+      <BorderPane layoutX="29.0" layoutY="32.0" prefHeight="624.0" prefWidth="1053.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane prefHeight="635.0" prefWidth="177.0" styleClass="navigationPane" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="150.0" layoutX="15.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/Gigatechinc2022.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="dashboadBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="6.0" layoutY="102.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Dashboard">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/dashboard.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="ledgerBtn" graphicTextGap="10.0" layoutX="6.0" layoutY="140.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Ledger">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/ledger.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="18.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="payableBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="6.0" layoutY="178.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Payable">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/statements.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="inventoryBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="8.0" layoutY="216.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Inventory">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/product-management.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="payrollBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="8.0" layoutY="254.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Payroll">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/wages.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="18.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="reportsBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="8.0" layoutY="292.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Reports">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/business-report.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="expensesBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="9.0" layoutY="330.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Expenses">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/accounting.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="8.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane fx:id="featurePane" prefHeight="616.0" prefWidth="876.0" stylesheets="@dashboard.css" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <AnchorPane prefHeight="26.0" prefWidth="1053.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutY="-7.0" prefHeight="43.0" prefWidth="177.0" style="-fx-background-color: #ffffff;" />
+                  <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="455.0" layoutY="2.0" prefHeight="32.0" prefWidth="189.0" text="August 12, 2020 12:00:00" textFill="#21285c">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </children>
 </AnchorPane>

@@ -3,5 +3,13 @@
  */
 
 .mainFxmlClass {
+-fx-background-color: #f7f6f2;
+}
 
+.navigationPane {
+    -fx-background-color: #ffffff;
+}
+.navigationButton {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ffffff;
 }

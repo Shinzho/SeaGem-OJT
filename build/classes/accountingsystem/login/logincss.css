@@ -16,6 +16,10 @@
     -fx-border-color: #e6ebe7;
     -fx-border-width: 1px;
 }
+.button:active{
+    -fx-border-color: #21285C;
+    -fx-border-width: 2px;
+}
 
 .icons {
     
@@ -25,8 +29,8 @@
 }
 
 .loginButton{
-    -fx-background-color: #0BD46E;
-    -fx-border-color: #0BD46E;
+    -fx-background-color: #21285C;
+    -fx-border-color: #21285C;
     -fx-border-width: 1px;
 }
 
