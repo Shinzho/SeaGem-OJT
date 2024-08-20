@@ -105,7 +105,7 @@
                         <Insets right="8.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="expensesBtn1" alignment="CENTER" graphicTextGap="6.0" layoutX="9.0" layoutY="367.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Employee">
+                  <Button fx:id="employeeBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="9.0" layoutY="367.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Employee">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>

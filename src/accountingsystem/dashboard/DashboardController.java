@@ -38,6 +38,8 @@ public class DashboardController implements Initializable {
     private Button expensesBtn;
     @FXML
     private AnchorPane featurePane;
+    @FXML
+    private Button employeeBtn;
 
     /**
      * Initializes the controller class.
@@ -50,6 +52,7 @@ public class DashboardController implements Initializable {
         payrollBtn.setOnAction(e -> loadFXML("/accountingsystem/payroll/Payroll.fxml"));
         reportsBtn.setOnAction(e -> loadFXML("/accountingsystem/reporting/Reports.fxml"));
         expensesBtn.setOnAction(e -> loadFXML("/accountingsystem/tracking/ExpenseTracking.fxml"));
+        employeeBtn.setOnAction(e -> loadFXML("/accountingsystem/employee/EmployeeManagement.fxml"));
     }    
     
     private void loadFXML(String fxmlFile) {

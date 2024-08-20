@@ -45,7 +45,7 @@
                         <Insets right="18.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="payableBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="6.0" layoutY="178.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Payable">
+                  <Button fx:id="payableBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="6.0" layoutY="178.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Accounts">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -54,19 +54,10 @@
                         </ImageView>
                      </graphic>
                      <padding>
-                        <Insets right="15.0" />
+                        <Insets right="6.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="receivebleBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="7.0" layoutY="216.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Receivables">
-                     <graphic>
-                        <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../resources/receive-money.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="inventoryBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="7.0" layoutY="254.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Inventory">
+                  <Button fx:id="inventoryBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="8.0" layoutY="216.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Inventory">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -78,7 +69,7 @@
                         <Insets right="10.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="payrollBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="7.0" layoutY="292.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Payroll">
+                  <Button fx:id="payrollBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="8.0" layoutY="254.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Payroll">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -90,7 +81,7 @@
                         <Insets right="18.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="reportsBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="7.0" layoutY="330.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Reports">
+                  <Button fx:id="reportsBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="8.0" layoutY="292.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Reports">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -102,11 +93,23 @@
                         <Insets right="20.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="expensesBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="8.0" layoutY="368.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Expenses">
+                  <Button fx:id="expensesBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="9.0" layoutY="330.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Expenses">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../resources/accounting.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="8.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="employeeBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="9.0" layoutY="367.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Employee">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/teamwork.png" />
                            </image>
                         </ImageView>
                      </graphic>
