@@ -51,7 +51,7 @@ public class EmployeeData {
     public String getFname(){
         return fname;
     }
-    public String Lname(){
+    public String getLname(){
         return lname;
     }
     public String getEmail(){

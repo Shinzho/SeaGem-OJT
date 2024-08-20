@@ -10,3 +10,10 @@
     -fx-background-color: White;
     -fx-background-radius: 20px;
 }
+
+.buttonClass{
+    -fx-background-color: #21285C;
+    -fx-border-color: #21285C;
+    -fx-border-width: 1px;
+    -fx-text-fill: White;
+}

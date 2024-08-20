@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="520.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="accountingsystem.employee.AddEmployeeController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="7.0" prefHeight="484.0" prefWidth="520.0" style="-fx-background-color: #f7f6f2;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="55.0" prefHeight="380.0" prefWidth="237.0" style="-fx-background-color: White; -fx-background-radius: 10px;">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Personal Details">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="13.0" layoutY="26.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="37.0" text="Last Name:" />
+                  <TextField fx:id="addLname" layoutX="14.0" layoutY="56.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="89.0" text="First Name:" />
+                  <TextField fx:id="addFname" layoutX="14.0" layoutY="106.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="140.0" text="Email:" />
+                  <TextField fx:id="addEmail" layoutX="14.0" layoutY="157.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="189.0" text="Contact Number:" />
+                  <TextField fx:id="AddPhone" layoutX="14.0" layoutY="206.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="286.0" text="Address:" />
+                  <TextArea fx:id="addAddress" layoutX="14.0" layoutY="303.0" prefHeight="53.0" prefWidth="200.0" />
+                  <Label layoutX="15.0" layoutY="240.0" text="Date of Birth:" />
+                  <DatePicker fx:id="addDob" layoutX="15.0" layoutY="257.0" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="15.0" layoutY="9.0" prefHeight="40.0" prefWidth="496.0" style="-fx-background-radius: 10px; -fx-background-color: White;">
+               <children>
+                  <Label layoutX="52.0" layoutY="7.0" text="Employee Details">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="16.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/identity-card.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="269.0" layoutY="55.0" prefHeight="380.0" prefWidth="237.0" style="-fx-background-color: White; -fx-background-radius: 10px;">
+               <children>
+                  <Label layoutX="14.0" layoutY="7.0" text="Work Details">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="14.0" layoutY="27.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="38.0" text="Department:" />
+                  <TextField fx:id="addDept" layoutX="14.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="89.0" text="Designation:" />
+                  <TextField fx:id="addDesignation" layoutX="14.0" layoutY="106.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="140.0" text="Salary:" />
+                  <TextField fx:id="addSalary" layoutX="14.0" layoutY="157.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="189.0" text="Date Hired" />
+                  <DatePicker fx:id="addDateHired" layoutX="14.0" layoutY="204.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutX="14.0" layoutY="239.0" text="Status:" />
+                  <MenuButton fx:id="addStatus" contentDisplay="CENTER" layoutX="14.0" layoutY="256.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="MenuButton" textAlignment="CENTER" />
+                  <Label layoutX="14.0" layoutY="288.0" text="Role:" />
+                  <MenuButton fx:id="addRole" contentDisplay="CENTER" layoutX="14.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="MenuButton" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="446.0" layoutY="447.0" mnemonicParsing="false" onAction="#addEmployeeBtn" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #21285C; -fx-text-fill: White;" text="Add" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
