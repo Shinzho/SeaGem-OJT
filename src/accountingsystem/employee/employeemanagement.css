@@ -5,3 +5,8 @@
 .mainFxmlClass {
     -fx-background-color:#f7f6f2;
 }
+
+.tableContainer{
+    -fx-background-color: White;
+    -fx-background-radius: 20px;
+}

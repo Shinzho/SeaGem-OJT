@@ -15,8 +15,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
+import java.sql.Connection;
+import accountingsystem.connections.connectDB;
+import java.sql.SQLException;
 /**
  * FXML Controller class
  *
@@ -34,7 +35,23 @@ public class LoginController implements Initializable {
 
     @FXML
 private void loginButton(ActionEvent event) {
+    Connection connection = null;
+    
     try {
+  
+            connection = connectDB.getConnection();
+            System.out.println("Connection established successfully!");
+            
+          
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    
+    try {
+        
+        
+        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/accountingsystem/dashboard/Dashboard.fxml"));
         Parent newRoot = loader.load();
 
