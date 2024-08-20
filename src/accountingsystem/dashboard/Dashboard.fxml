@@ -45,7 +45,7 @@
                         <Insets right="18.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="payableBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="6.0" layoutY="178.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Payable">
+                  <Button fx:id="payableBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="6.0" layoutY="178.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Accounts">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -54,7 +54,7 @@
                         </ImageView>
                      </graphic>
                      <padding>
-                        <Insets right="15.0" />
+                        <Insets right="6.0" />
                      </padding>
                   </Button>
                   <Button fx:id="inventoryBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="8.0" layoutY="216.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Inventory">
@@ -98,6 +98,18 @@
                         <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../resources/accounting.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="8.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="expensesBtn1" alignment="CENTER" graphicTextGap="6.0" layoutX="9.0" layoutY="367.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Employee">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/teamwork.png" />
                            </image>
                         </ImageView>
                      </graphic>
