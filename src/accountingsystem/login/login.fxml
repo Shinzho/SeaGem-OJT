@@ -14,8 +14,7 @@
       <AnchorPane prefHeight="395.0" prefWidth="567.0" style="-fx-background-color: #ffffff;">
          <children>
             <Label layoutX="355.0" layoutY="64.0" style="-fx-font-size: 30px; -fx-font-weight: bold;" text="Sign In" textFill="#21285c" />
-            <Label layoutX="359.0" layoutY="122.0" style="-fx-font-family: Lucida Console;" text="Please select role" />
-            <Button contentDisplay="TOP" layoutX="321.0" layoutY="145.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="83.0" stylesheets="@logincss.css" text="Admin">
+            <Button contentDisplay="TOP" layoutX="363.0" layoutY="120.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="83.0" stylesheets="@logincss.css" text="Admin">
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -24,23 +23,14 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button contentDisplay="TOP" layoutX="416.0" layoutY="145.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="83.0" stylesheets="@logincss.css" text="HR">
-               <graphic>
-                  <ImageView fitHeight="40.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../resources/hr%20(1).png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <TextField layoutX="321.0" layoutY="237.0" prefHeight="25.0" prefWidth="200.0" />
-            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="287.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="username" layoutX="321.0" layoutY="229.0" prefHeight="25.0" prefWidth="200.0" />
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="287.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../resources/user.png" />
                </image>
             </ImageView>
-            <PasswordField layoutX="320.0" layoutY="280.0" prefHeight="25.0" prefWidth="200.0" />
-            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="287.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+            <PasswordField fx:id="password" layoutX="320.0" layoutY="272.0" prefHeight="25.0" prefWidth="200.0" />
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="287.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../resources/padlock%20(1).png" />
                </image>

@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="520.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="accountingsystem.employee.AddEmployeeController">
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accountingsystem.employee.AddEmployeeController">
    <children>
       <AnchorPane layoutX="14.0" layoutY="7.0" prefHeight="484.0" prefWidth="520.0" style="-fx-background-color: #f7f6f2;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -75,7 +74,8 @@
                   <MenuButton fx:id="addRole" contentDisplay="CENTER" layoutX="14.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="MenuButton" textAlignment="CENTER" />
                </children>
             </AnchorPane>
-            <Button layoutX="446.0" layoutY="447.0" mnemonicParsing="false" onAction="#addEmployeeBtn" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #21285C; -fx-text-fill: White;" text="Add" />
+            <Button fx:id="addButton" layoutX="427.0" layoutY="447.0" mnemonicParsing="false" onAction="#addEmployeeBtn" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #21285C; -fx-text-fill: White;" text="Add" />
+            <Button layoutX="348.0" layoutY="447.0" mnemonicParsing="false" onAction="#updateEmployeeBtn" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #21285C; -fx-text-fill: White;" text="Update" />
          </children>
       </AnchorPane>
    </children>
