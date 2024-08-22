@@ -13,7 +13,7 @@ import javafx.scene.control.TableColumn;
 import accountingsystem.connections.EmployeeData;
 import accountingsystem.connections.connectDB;
 import accountingsystem.connections.reportData;
-import com.mysql.cj.protocol.Resultset;
+import java.sql.ResultSet;
 import java.io.IOException;
 import java.sql.*;
 import javafx.collections.FXCollections;

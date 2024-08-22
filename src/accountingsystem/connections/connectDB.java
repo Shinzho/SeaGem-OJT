@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * @author User
  */
 public class connectDB {
-    private static final String URL ="jdbc:mysql://localhost:3306/seagem";
+    private static final String URL ="jdbc:mysql://localhost:3306/AccountingSystem";
     private static final String USER ="root";
     private static final String PASSWORD ="";
     
