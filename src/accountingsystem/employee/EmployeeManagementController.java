@@ -14,7 +14,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -26,6 +25,8 @@ import javafx.util.Callback;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
 
@@ -70,58 +71,86 @@ public class EmployeeManagementController implements Initializable, EmployeeData
         loadColumnData();
     }
  
-    private void loadColumnData(){
-        fnameColumn.setCellValueFactory(new PropertyValueFactory<>("fname"));
-        lnameColumn.setCellValueFactory(new PropertyValueFactory<>("lname"));
-        emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
-        salaryColumn.setCellValueFactory(new PropertyValueFactory<>("salary"));
-        departmentColumn.setCellValueFactory(new PropertyValueFactory<>("department"));
-        designationColumn.setCellValueFactory(new PropertyValueFactory<>("designation"));
-        hireDateColumn.setCellValueFactory(new PropertyValueFactory<>("hireDate"));
-        addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
-        phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        roleColumn.setCellValueFactory(new PropertyValueFactory<>("role"));
-        
-        actionColumn.setCellFactory(new Callback<TableColumn<EmployeeData, Void>, TableCell<EmployeeData, Void>>() {
-            @Override
-            public TableCell<EmployeeData, Void> call(TableColumn<EmployeeData, Void> param) {
-                return new TableCell<EmployeeData, Void>() {
-                    private final Button btn = new Button("Delete");
-                    private final Button updateBtn = new Button("Update");
-                    
-                    
-                    
-                    {
-                       btn.setStyle("-fx-background-color: #FF0000; -fx-text-fill: white;"); 
-                        updateBtn.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
-                        
-                        btn.setOnAction(e -> {
-                            EmployeeData data = getTableView().getItems().get(getIndex());
-                            handleButtonAction(data,"delete");
-                        });
-                        
-                        updateBtn.setOnAction(e -> {
-                            EmployeeData data = getTableView().getItems().get(getIndex());
-                            handleButtonAction(data,"update");
-                        });
-                    }
+    private void loadColumnData() {
+    fnameColumn.setCellValueFactory(new PropertyValueFactory<>("fname"));
+    lnameColumn.setCellValueFactory(new PropertyValueFactory<>("lname"));
+    emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
+    salaryColumn.setCellValueFactory(new PropertyValueFactory<>("salary"));
+    departmentColumn.setCellValueFactory(new PropertyValueFactory<>("department"));
+    designationColumn.setCellValueFactory(new PropertyValueFactory<>("designation"));
+    hireDateColumn.setCellValueFactory(new PropertyValueFactory<>("hireDate"));
+    addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
+    phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
+    statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+    roleColumn.setCellValueFactory(new PropertyValueFactory<>("role"));
 
-                    @Override
-                     protected void updateItem(Void item, boolean empty) {
+    actionColumn.setCellFactory(new Callback<TableColumn<EmployeeData, Void>, TableCell<EmployeeData, Void>>() {
+        @Override
+        public TableCell<EmployeeData, Void> call(TableColumn<EmployeeData, Void> param) {
+            return new TableCell<EmployeeData, Void>() {
+                private final Button btn = new Button();
+                private final Button updateBtn = new Button();
+                private final Button attendanceBtn = new Button();
+
+                {
+                   
+                    Image deleteIcon = new Image(getClass().getResourceAsStream("/resources/delete.png"));
+                    Image updateIcon = new Image(getClass().getResourceAsStream("/resources/refresh.png"));
+                    Image attendanceIcon = new Image(getClass().getResourceAsStream("/resources/checked.png"));
+                    
+                    btn.setGraphic(new ImageView(deleteIcon));
+                    updateBtn.setGraphic(new ImageView(updateIcon));
+                    attendanceBtn.setGraphic(new ImageView(attendanceIcon));
+
+                   
+                    btn.setStyle("-fx-background-color: transparent; -fx-border-color:transparent;");
+                    updateBtn.setStyle("-fx-background-color: transparent; -fx-border-color:transparent;");
+                    attendanceBtn.setStyle("-fx-background-color: transparent; -fx-border-color:transparent;");
+                    
+                    btn.setPrefHeight(35);
+                    btn.setPrefWidth(30);
+                    
+                    updateBtn.setPrefHeight(35);
+                    updateBtn.setPrefWidth(30);
+                    
+                    attendanceBtn.setPrefHeight(35);
+                    attendanceBtn.setPrefWidth(30);
+                    
+                    
+                    
+                    btn.setOnAction(e -> {
+                        EmployeeData data = getTableView().getItems().get(getIndex());
+                        handleButtonAction(data, "delete");
+                    });
+
+                    updateBtn.setOnAction(e -> {
+                        EmployeeData data = getTableView().getItems().get(getIndex());
+                        handleButtonAction(data, "update");
+                    });
+                    
+                    attendanceBtn.setOnAction(e ->{
+                        EmployeeData data = getTableView().getItems().get(getIndex());
+                        handleButtonAction(data, "attendance");
+                    });
+                }
+                
+                
+
+                @Override
+                protected void updateItem(Void item, boolean empty) {
                     super.updateItem(item, empty);
 
                     if (empty) {
                         setGraphic(null);
                     } else {
-                        HBox hbox = new HBox(5, btn, updateBtn);
+                        HBox hbox = new HBox(1, btn, updateBtn, attendanceBtn);
                         setGraphic(hbox);
                     }
                 }
-                };
-            }
-        });
-    }
+            };
+        }
+    });
+}
 
     private void handleButtonAction(EmployeeData data, String action) {
     if ("delete".equals(action)) {
@@ -151,6 +180,8 @@ public class EmployeeManagementController implements Initializable, EmployeeData
         }
     } else if ("update".equals(action)) {
         openEmployeeFormForUpdate(data);
+    }else if ("attendance".equals(action)){
+        openAttendanceForm(data);
     }
 }
 
@@ -200,6 +231,10 @@ public class EmployeeManagementController implements Initializable, EmployeeData
             e.printStackTrace();
         }
     }
+    
+    
+    
+    
 
     @Override
     public void onEmployeeDataChanged() {
@@ -236,6 +271,25 @@ public class EmployeeManagementController implements Initializable, EmployeeData
         e.printStackTrace();
     }
 }
+    
+    private void openAttendanceForm(EmployeeData data) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("EmployeeWorkDetails.fxml"));
+        Parent newRoot = loader.load();
+
+        EmployeeWorkDetailsController wdController = loader.getController();
+        wdController.setEmployeeData(data); // Pass the data here
+
+        Stage newStage = new Stage();
+        Scene newScene = new Scene(newRoot);
+        newStage.setScene(newScene);
+        newStage.setTitle("Work Details");
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
 
     
 }

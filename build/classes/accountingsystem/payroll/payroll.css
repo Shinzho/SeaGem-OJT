@@ -5,3 +5,13 @@
 .mainFxmlClass {
  
 }
+.container{
+    
+    -fx-background-color: White;
+    -fx-background-radius: 10px;
+}
+
+.container1{
+    -fx-border-color:#cccccc;
+    
+}

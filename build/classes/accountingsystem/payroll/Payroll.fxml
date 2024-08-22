@@ -1,22 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="876.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="accountingsystem.payroll.PayrollController">
+<AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="876.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accountingsystem.payroll.PayrollController">
     <stylesheets>
         <URL value="@payroll.css" />
     </stylesheets>
    <children>
       <AnchorPane layoutX="60.0" layoutY="61.0" prefHeight="616.0" prefWidth="876.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="266.0" layoutY="196.0" text="Payroll">
-               <font>
-                  <Font size="66.0" />
-               </font>
-            </Label>
+            <AnchorPane layoutX="14.0" layoutY="24.0" prefHeight="582.0" prefWidth="396.0" styleClass="container" stylesheets="@payroll.css">
+               <children>
+                  <TableView fx:id="emptable" layoutX="14.0" layoutY="45.0" prefHeight="410.0" prefWidth="372.0">
+                    <columns>
+                      <TableColumn fx:id="empid" prefWidth="75.0" text="Emp ID" />
+                        <TableColumn fx:id="enpfname" prefWidth="75.0" text="First Name" />
+                        <TableColumn fx:id="emplname" prefWidth="75.0" text="Last Name" />
+                        <TableColumn fx:id="empDept" prefWidth="75.0" text="Department" />
+                        <TableColumn fx:id="empPos" prefWidth="75.0" text="Position" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="14.0" layoutY="21.0" text="Calculate payroll for:" />
+                  <Button layoutX="319.0" layoutY="546.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" text="Print" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="424.0" layoutY="20.0" prefHeight="571.0" prefWidth="431.0" styleClass="container" stylesheets="@payroll.css">
+               <children>
+                  <Label layoutX="17.0" layoutY="4.0" text="Employee Payslip">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="18.0" layoutY="41.0" prefHeight="3.0" prefWidth="396.0" />
+                  <Label layoutX="19.0" layoutY="54.0" text="Employee No.:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="71.0" text="Name:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="88.0" text="Department:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="105.0" text="Designation:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="269.0" layoutY="54.0" text="Payroll No.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="270.0" layoutY="71.0" text="Date:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="271.0" layoutY="89.0" text="Basic Rate:" />
+                  <Separator layoutX="15.0" layoutY="133.0" prefHeight="3.0" prefWidth="405.0" />
+                  <AnchorPane layoutX="15.0" layoutY="148.0" prefHeight="159.0" prefWidth="405.0" styleClass="container1" stylesheets="@payroll.css">
+                     <children>
+                        <Separator layoutX="4.0" layoutY="29.0" prefHeight="3.0" prefWidth="396.0" />
+                        <Label layoutX="9.0" layoutY="2.0" text="Earnings">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="34.0" text="Basic Pay:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="56.0" text="Overtime:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="11.0" layoutY="79.0" text="Allowances:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="100.0" text="Others">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="6.0" layoutY="125.0" prefHeight="3.0" prefWidth="396.0" />
+                        <Label layoutX="11.0" layoutY="133.0" text="Total:">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="payrollBasicPay" layoutX="318.0" layoutY="36.0" prefHeight="17.0" prefWidth="73.0" text="123456789" />
+                        <Label fx:id="payrollOvertime" layoutX="318.0" layoutY="57.0" prefHeight="17.0" prefWidth="73.0" text="123456789" />
+                        <Label fx:id="payrollAllowance" layoutX="318.0" layoutY="79.0" prefHeight="17.0" prefWidth="73.0" text="123456789" />
+                        <Label fx:id="earningsTotal" layoutX="320.0" layoutY="133.0" prefHeight="17.0" prefWidth="73.0" text="123456789">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="14.0" layoutY="325.0" prefHeight="195.0" prefWidth="406.0" styleClass="container1" stylesheets="@payroll.css">
+                     <children>
+                        <Separator layoutX="4.0" layoutY="29.0" prefHeight="3.0" prefWidth="396.0" />
+                        <Label layoutX="9.0" layoutY="2.0" text="Deductions">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="31.0" text="SSS:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="51.0" text="Pag-ibig:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="74.0" text="PhilHealth:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="96.0" text="Others">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="8.0" layoutY="159.0" prefHeight="3.0" prefWidth="396.0" />
+                        <Label layoutX="12.0" layoutY="165.0" text="Total:">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="payrollSSS" layoutX="330.0" layoutY="37.0" prefHeight="17.0" prefWidth="73.0" text="123456789" />
+                        <Label fx:id="payrollPagibig" layoutX="330.0" layoutY="58.0" prefHeight="17.0" prefWidth="73.0" text="123456789" />
+                        <Label fx:id="payrollPhilhealth" layoutX="330.0" layoutY="80.0" prefHeight="17.0" prefWidth="73.0" text="123456789" />
+                        <Label fx:id="payrollOthers2" layoutX="330.0" layoutY="98.0" prefHeight="17.0" prefWidth="73.0" text="123456789" />
+                        <Label fx:id="deductionTotal" layoutX="330.0" layoutY="166.0" prefHeight="17.0" prefWidth="73.0" text="123456789">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="payrollOthers" layoutX="331.0" layoutY="115.0" prefHeight="17.0" prefWidth="73.0" text="123456789" />
+                        <Label layoutX="11.0" layoutY="115.0" text="Absences:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="11.0" layoutY="129.0" text="Tardiness:">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="payrollLate" layoutX="332.0" layoutY="129.0" prefHeight="17.0" prefWidth="73.0" text="123456789" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="28.0" layoutY="528.0" text="Net Total:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="netSalary" layoutX="347.0" layoutY="529.0" prefHeight="17.0" prefWidth="73.0" text="123456789">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="payrollEmpId" layoutX="106.0" layoutY="54.0" prefHeight="19.0" prefWidth="157.0" text="xxxxxxxxxxxxxxxxxxxxx">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="payrollEmpName" layoutX="61.0" layoutY="71.0" prefHeight="19.0" prefWidth="208.0" text="xxxxxxxxxxxxxxxxxxxxx">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="payrollEmpDept" layoutX="93.0" layoutY="88.0" prefHeight="19.0" prefWidth="170.0" text="xxxxxxxxxxxxxxxxxxxxx">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="payrollEmpDeisgnation" layoutX="93.0" layoutY="105.0" prefHeight="19.0" prefWidth="170.0" text="xxxxxxxxxxxxxxxxxxxxx">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="payrollNo" layoutX="334.0" layoutY="54.0" prefHeight="19.0" prefWidth="73.0" text="xxxxxxxx">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="payrollDate" layoutX="308.0" layoutY="71.0" prefHeight="19.0" prefWidth="109.0" text="xxxxxxxx">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="payrollEmpRate" layoutX="334.0" layoutY="88.0" prefHeight="19.0" prefWidth="83.0" text="xxxxxxxx">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>
