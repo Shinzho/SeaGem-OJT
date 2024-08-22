@@ -3,5 +3,11 @@
  */
 
 .mainFxmlClass {
-
+    -fx-background-color: #f7f6f2;
 }
+
+.Income_Statement {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+}
+
