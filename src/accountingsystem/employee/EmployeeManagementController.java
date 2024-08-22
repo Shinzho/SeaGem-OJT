@@ -47,8 +47,8 @@ public class EmployeeManagementController implements Initializable, EmployeeData
     private TableColumn<EmployeeData, Date> hireDateColumn;
     @FXML
     private TableColumn<EmployeeData, String> addressColumn;
-    @FXML
-    private TableColumn<EmployeeData, String> phoneColumn;
+    @FXML 
+   private TableColumn<EmployeeData, String> phoneColumn;
     @FXML
     private TableColumn<EmployeeData, String> statusColumn;
     @FXML
