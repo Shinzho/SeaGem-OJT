@@ -5,6 +5,19 @@
         <group>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/AccountingSystem/src/accountingsystem/AccountingSystem.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/AccountingSystem/src/accountingsystem/payroll/payroll.css</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/connections/connectDB.java</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/employee/EmployeeManagement.fxml</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/reporting/ReportsController.java</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/reporting/reports.css</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/accounts/AccountsController.java</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/AccountingSystem.java</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/employee/AddEmployee.fxml</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/employee/EmployeeManagementController.java</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/login/LoginController.java</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/employee/AddEmployeeController.java</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/employee/employeemanagement.css</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/dashboard/DashboardController.java</file>
+            <file>file:/C:/Users/marte/Documents/NetBeansProjects/SeaGem-OJT/SEAGEM%201/SeaGem-OJT/src/accountingsystem/reporting/Reports.fxml</file>
         </group>
     </open-files>
 </project-private>
