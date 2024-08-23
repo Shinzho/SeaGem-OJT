@@ -436,6 +436,12 @@ private void deleteReceivables(int id) {
  
 }
 
+    @FXML
+    private void refresh(ActionEvent event) {
+        loadAccountsPayableData(); 
+    loadAccountsReceivableData();
+    }
+
     
     
     

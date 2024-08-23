@@ -62,6 +62,8 @@ public class EmployeeManagementController implements Initializable, EmployeeData
     private TableColumn<EmployeeData, Void> actionColumn;
     @FXML
     private Button addEmployeeBtn;
+    @FXML
+    private Button addEmployeeBtn1;
     
   
 
@@ -289,6 +291,11 @@ public class EmployeeManagementController implements Initializable, EmployeeData
         e.printStackTrace();
     }
 }
+
+    @FXML
+    private void refresh(ActionEvent event) {
+        loadEmployeeData();
+    }
 
 
     

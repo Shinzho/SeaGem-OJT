@@ -59,8 +59,9 @@
                   <Font size="19.0" />
                </font>
             </Label>
-            <Button layoutX="776.0" layoutY="23.0" mnemonicParsing="false" onAction="#addPayable" text="Add Item" />
+            <Button layoutX="776.0" layoutY="23.0" mnemonicParsing="false" onAction="#addPayable" style="-fx-background-color: #21285C; -fx-text-fill: white;" text="Add Item" />
             <Button layoutX="776.0" layoutY="299.0" mnemonicParsing="false" onAction="#addReceivable" text="Add Item" />
+            <Button layoutX="700.0" layoutY="23.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #21285C; -fx-text-fill: white;" text="Refresh" />
          </children>
       </AnchorPane>
    </children>

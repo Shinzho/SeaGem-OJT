@@ -34,6 +34,7 @@
                     </columns>
                   </TableView>
                   <Button fx:id="addEmployeeBtn" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#openEmployeeForm" prefHeight="23.0" prefWidth="129.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px;" styleClass="buttonClass" stylesheets="@employeemanagement.css" text="Add Employee" />
+                  <Button fx:id="addEmployeeBtn1" layoutX="155.0" layoutY="20.0" mnemonicParsing="false" onAction="#refresh" prefHeight="23.0" prefWidth="129.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px;" styleClass="buttonClass" stylesheets="@employeemanagement.css" text="Refresh" />
                </children>
             </AnchorPane>
             <Label layoutX="26.0" layoutY="14.0" text="Employee Details">

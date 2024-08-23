@@ -38,6 +38,7 @@
                   <Font size="23.0" />
                </font>
             </Label>
+            <Button fx:id="addstockBtn1" layoutX="702.0" layoutY="23.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
          </children>
       </AnchorPane>
    </children>

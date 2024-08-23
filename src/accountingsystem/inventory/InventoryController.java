@@ -54,10 +54,12 @@ public class InventoryController implements Initializable, AddStockData {
     private TableColumn<StockItem, String> storageLocation;
     @FXML
     private TableColumn<StockItem, String> batchNumber;
-    @FXML
-    private Button addStockBtn;
 
     private final ObservableList<StockItem> stockData = FXCollections.observableArrayList();
+    @FXML
+    private Button addstockBtn;
+    @FXML
+    private Button addstockBtn1;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -67,8 +69,21 @@ public class InventoryController implements Initializable, AddStockData {
 
     @FXML
     private void addStockBtn(ActionEvent event) {
-        // Implement logic to add a new stock item
+         try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("addStock.fxml"));
+        Parent newRoot = loader.load();
+
+
+        Stage newStage = new Stage();
+        Scene newScene = new Scene(newRoot);
+        newStage.setScene(newScene);
+        newStage.setTitle("Update Employee");
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+    }
+    
 
     private void loadColumnData() {
         stockId.setCellValueFactory(new PropertyValueFactory<>("productID"));
@@ -214,5 +229,11 @@ public class InventoryController implements Initializable, AddStockData {
     loadStockData();
 
 }
+
+    @FXML
+    private void refresh(ActionEvent event) {
+        loadStockData();
+    }
+    
 }
 
