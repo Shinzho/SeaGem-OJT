@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -12,19 +11,16 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="876.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accountingsystem.reporting.ReportsController">
-    <stylesheets>
-        <URL value="@reports.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" maxHeight="616.0" maxWidth="876.0" prefHeight="616.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accountingsystem.reporting.ReportsController">
    <children>
-      <AnchorPane layoutX="37.0" layoutY="82.0" prefHeight="616.0" prefWidth="876.0" styleClass="mainFxmlClass" stylesheets="@reports.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="60.8" layoutY="46.4" prefHeight="599.0" prefWidth="901.0" styleClass="mainFxmlClass" stylesheets="@reports.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="16.0">
          <children>
-            <Label layoutX="40.0" layoutY="26.0" prefHeight="54.0" prefWidth="298.0" text="Monthly Report">
+            <Label layoutX="17.0" layoutY="14.0" prefHeight="54.0" prefWidth="298.0" text="Monthly Report">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <HBox alignment="TOP_CENTER" layoutX="40.0" layoutY="80.0" prefHeight="86.0" prefWidth="800.0" spacing="30.0">
+            <HBox alignment="TOP_CENTER" layoutY="80.0" prefHeight="86.0" prefWidth="840.0" spacing="40.0">
                <children>
                   <Pane prefHeight="200.0" prefWidth="230.0" styleClass="Income_Statement">
                      <children>
@@ -88,17 +84,17 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </HBox>
-            <TableView fx:id="table_breakdown" layoutX="40.0" layoutY="226.0" prefHeight="360.0" prefWidth="800.0" AnchorPane.leftAnchor="40.0">
+            <TableView fx:id="table_breakdown" layoutX="16.8" layoutY="226.0" prefHeight="328.0" prefWidth="806.0" AnchorPane.leftAnchor="17.0">
               <columns>
-                <TableColumn fx:id="assetName" prefWidth="132.0" text="Assets" />
-                <TableColumn fx:id="assetValue" minWidth="0.0" prefWidth="132.0" text="Value" />
-                  <TableColumn fx:id="liabilityName" prefWidth="132.0" text="Liabilities" />
+                <TableColumn fx:id="assetName" prefWidth="133.0" text="Assets" />
+                <TableColumn fx:id="assetValue" minWidth="0.0" prefWidth="133.0" text="Value" />
+                  <TableColumn fx:id="liabilityName" prefWidth="133.0" text="Liabilities" />
                   <TableColumn fx:id="liabilityValue" prefWidth="133.0" text="Value" />
                   <TableColumn fx:id="equityName" prefWidth="133.0" text="Equity" />
                   <TableColumn fx:id="equityValue" prefWidth="133.0" text="Value" />
               </columns>
             </TableView>
-            <Label layoutX="40.0" layoutY="190.0" prefHeight="35.0" prefWidth="298.0" text="Report Breakdown:">
+            <Label layoutX="17.0" layoutY="189.0" prefHeight="35.0" prefWidth="298.0" text="Report Breakdown:">
                <font>
                   <Font size="20.0" />
                </font>
@@ -106,4 +102,7 @@
          </children>
       </AnchorPane>
    </children>
+   <padding>
+      <Insets bottom="30.0" left="15.0" right="15.0" />
+   </padding>
 </AnchorPane>

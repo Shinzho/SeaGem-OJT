@@ -1,23 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="876.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="accountingsystem.ledger.GeneralLedgerController">
-    <stylesheets>
-        <URL value="@generalledger.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" maxHeight="616.0" maxWidth="876.0" prefHeight="616.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accountingsystem.ledger.GeneralLedgerController">
    <children>
-      <AnchorPane layoutX="165.0" layoutY="60.0" prefHeight="616.0" prefWidth="876.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="60.8" layoutY="46.4" prefHeight="570.0" prefWidth="876.0" styleClass="mainFxmlClass" stylesheets="@../reporting/reports.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="62.0">
          <children>
-            <Label layoutX="191.0" layoutY="91.0" text="Ledger">
+            <Label layoutX="15.0" layoutY="14.0" text="Name/Code:">
                <font>
-                  <Font size="67.0" />
+                  <Font size="20.0" />
                </font>
             </Label>
+            <Label layoutX="14.0" layoutY="46.0" text="Type:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="20.0" layoutY="88.0" prefWidth="290.0" />
+            <TableView fx:id="ledgerTable" layoutX="334.0" layoutY="48.0" prefHeight="200.0" prefWidth="490.0">
+              <columns>
+                <TableColumn fx:id="ledgerDate" prefWidth="90.0" text="Date" />
+                <TableColumn fx:id="ledgerDesc" prefWidth="155.0" text="Description" />
+                  <TableColumn fx:id="ledgerDebit" text="Debit (P)" />
+                  <TableColumn fx:id="ledgerCredit" text="Credit (P)" />
+                  <TableColumn fx:id="ledgerBalance" text="Balance (P)" />
+              </columns>
+            </TableView>
+            <TableView fx:id="trialBalanceTable" layoutX="21.0" layoutY="134.0" prefHeight="366.0" prefWidth="290.0">
+              <columns>
+                <TableColumn fx:id="trialName" prefWidth="125.0" text="Account Name" />
+                <TableColumn fx:id="trialDebit" minWidth="0.0" text="Debit (P)" />
+                  <TableColumn fx:id="trialCredit" text="Credit (P)" />
+              </columns>
+            </TableView>
+            <Label fx:id="nameCode" layoutX="135.0" layoutY="15.0" text="Label">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="nameType" layoutX="71.0" layoutY="48.0" text="Label">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="99.0" text="Trial Balance">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="333.0" layoutY="15.0" text="General Ledger Entries">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="334.0" layoutY="268.0" text="Journal Entries">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="journalTable" layoutX="334.0" layoutY="300.0" prefHeight="200.0" prefWidth="490.0">
+               <columns>
+                  <TableColumn fx:id="journalDate" prefWidth="90.0" text="Date" />
+                  <TableColumn fx:id="journalAccount" prefWidth="120.0" text="Account" />
+                  <TableColumn fx:id="journalDebit" text="Debit (P)" />
+                  <TableColumn fx:id="journalCredit" text="Credit (P)" />
+                  <TableColumn fx:id="journalDesc" prefWidth="115.0" text="Description" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
+      <Label layoutX="19.0" layoutY="7.0" prefHeight="54.0" prefWidth="298.0" text="General Ledger">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
    </children>
+   <padding>
+      <Insets bottom="30.0" left="15.0" right="15.0" />
+   </padding>
 </AnchorPane>

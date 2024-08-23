@@ -4,23 +4,144 @@
  */
 package accountingsystem.ledger;
 
+import accountingsystem.connections.JournalEntry;
+import accountingsystem.connections.LedgerEntry;
+import accountingsystem.connections.TrialBalance;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import accountingsystem.connections.connectDB;
+import accountingsystem.connections.reportData;
+import java.sql.ResultSet;
+import java.sql.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
  *
- * @author User
+ * @author marte
  */
 public class GeneralLedgerController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private TableColumn<JournalEntry, String> journalAccount;
+
+    @FXML
+    private TableColumn<JournalEntry, Double> journalCredit;
+
+    @FXML
+    private TableColumn<JournalEntry, String> journalDate;
+
+    @FXML
+    private TableColumn<JournalEntry, Double> journalDebit;
+
+    @FXML
+    private TableColumn<JournalEntry, String> journalDesc;
+
+    @FXML
+    private TableColumn<LedgerEntry, Double> ledgerBalance;
+
+    @FXML
+    private TableColumn<LedgerEntry, Double> ledgerCredit;
+
+    @FXML
+    private TableColumn<LedgerEntry, String> ledgerDate;
+
+    @FXML
+    private TableColumn<LedgerEntry, Double> ledgerDebit;
+
+    @FXML
+    private TableColumn<LedgerEntry, String> ledgerDesc;
+
+    @FXML
+    private TableView<JournalEntry> journalTable;
+
+    @FXML
+    private TableView<TrialBalance> trialBalanceTable;
+
+    @FXML
+    private TableView<LedgerEntry> ledgerTable;
+
+    @FXML
+    private Label nameCode;
+
+    @FXML
+    private Label nameType;
+
+    @FXML
+    private TableColumn<TrialBalance, Double> trialCredit;
+
+    @FXML
+    private TableColumn<TrialBalance, Double> trialDebit;
+
+    @FXML
+    private TableColumn<TrialBalance, String> trialName;
+
+    private ObservableList<JournalEntry> journalData;
+    private ObservableList<LedgerEntry> ledgerData;
+    private ObservableList<TrialBalance> trialBalanceData;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        journalData = FXCollections.observableArrayList();
+        ledgerData = FXCollections.observableArrayList();
+        trialBalanceData = FXCollections.observableArrayList();
+
+        journalDate.setCellValueFactory(new PropertyValueFactory<>("journalDate"));
+        journalAccount.setCellValueFactory(new PropertyValueFactory<>("journalAccount"));
+        journalDebit.setCellValueFactory(new PropertyValueFactory<>("journalDebit"));
+        journalCredit.setCellValueFactory(new PropertyValueFactory<>("journalCredit"));
+        journalDesc.setCellValueFactory(new PropertyValueFactory<>("journalDesc"));
+
+        loadJournalData();
+    }
+
+    private void loadJournalData() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = connectDB.getConnection();
+            String query = "SELECT date, account, debit, credit, description FROM journal";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String date = rs.getString("date");
+                String account = rs.getString("account");
+                Double debit = rs.getDouble("debit");
+                Double credit = rs.getDouble("credit");
+                String description = rs.getString("description");
+
+                journalData.add(new JournalEntry(date, account, debit, credit, description));
+            }
+
+            journalTable.setItems(journalData);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
