@@ -98,8 +98,15 @@ public class GeneralLedgerController implements Initializable {
         journalDebit.setCellValueFactory(new PropertyValueFactory<>("journalDebit"));
         journalCredit.setCellValueFactory(new PropertyValueFactory<>("journalCredit"));
         journalDesc.setCellValueFactory(new PropertyValueFactory<>("journalDesc"));
+        
+        ledgerDate.setCellValueFactory(new PropertyValueFactory<>("ledgerDate"));
+        ledgerDesc.setCellValueFactory(new PropertyValueFactory<>("ledgerDesc"));
+        ledgerDebit.setCellValueFactory(new PropertyValueFactory<>("ledgerDebit"));
+        ledgerCredit.setCellValueFactory(new PropertyValueFactory<>("ledgerCredit"));
+        ledgerBalance.setCellValueFactory(new PropertyValueFactory<>("ledgerBalance"));
 
         loadJournalData();
+        loadLedgerData();
     }
 
     private void loadJournalData() {
@@ -144,4 +151,42 @@ public class GeneralLedgerController implements Initializable {
         }
     }
 
+    
+    private void loadLedgerData() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = connectDB.getConnection();
+            String query = "SELECT date, description, debit, credit, balance FROM ledger";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String date = rs.getString("date");
+                String description = rs.getString("description");
+                Double debit = rs.getDouble("debit");
+                Double credit = rs.getDouble("credit");
+                Double balance = rs.getDouble("balance");
+
+                ledgerData.add(new LedgerEntry(date, description, debit, credit, balance));
+            }
+
+            ledgerTable.setItems(ledgerData);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
+    
+
