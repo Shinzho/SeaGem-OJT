@@ -39,12 +39,12 @@
                   <TableColumn fx:id="trialCredit" text="Credit (P)" />
               </columns>
             </TableView>
-            <Label fx:id="nameCode" layoutX="135.0" layoutY="15.0" text="Label">
+            <Label fx:id="nameCode" layoutX="135.0" layoutY="15.0" text="Account Name">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="nameType" layoutX="71.0" layoutY="48.0" text="Label">
+            <Label fx:id="nameType" layoutX="71.0" layoutY="48.0" text="Account Type">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

@@ -98,15 +98,20 @@ public class GeneralLedgerController implements Initializable {
         journalDebit.setCellValueFactory(new PropertyValueFactory<>("journalDebit"));
         journalCredit.setCellValueFactory(new PropertyValueFactory<>("journalCredit"));
         journalDesc.setCellValueFactory(new PropertyValueFactory<>("journalDesc"));
-        
+
         ledgerDate.setCellValueFactory(new PropertyValueFactory<>("ledgerDate"));
         ledgerDesc.setCellValueFactory(new PropertyValueFactory<>("ledgerDesc"));
         ledgerDebit.setCellValueFactory(new PropertyValueFactory<>("ledgerDebit"));
         ledgerCredit.setCellValueFactory(new PropertyValueFactory<>("ledgerCredit"));
         ledgerBalance.setCellValueFactory(new PropertyValueFactory<>("ledgerBalance"));
 
+        trialName.setCellValueFactory(new PropertyValueFactory<>("trialName"));
+        trialDebit.setCellValueFactory(new PropertyValueFactory<>("trialDebit"));
+        trialCredit.setCellValueFactory(new PropertyValueFactory<>("trialCredit"));
+
         loadJournalData();
         loadLedgerData();
+        loadTrialBalanceData();
     }
 
     private void loadJournalData() {
@@ -151,7 +156,6 @@ public class GeneralLedgerController implements Initializable {
         }
     }
 
-    
     private void loadLedgerData() {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -179,14 +183,59 @@ public class GeneralLedgerController implements Initializable {
             e.printStackTrace();
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (stmt != null) stmt.close();
-                if (conn != null) conn.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
-}
-    
 
+    private void loadTrialBalanceData() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = connectDB.getConnection();
+            String query = "SELECT trial_name, trial_debit, trial_credit FROM trial_balance";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String name = rs.getString("trial_name");
+                double debit = rs.getDouble("trial_debit");
+                double credit = rs.getDouble("trial_credit");
+
+                trialBalanceData.add(new TrialBalance(name, debit, credit));
+            }
+
+            trialBalanceTable.setItems(trialBalanceData);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+}
