@@ -37,7 +37,7 @@ public class LoginController implements Initializable {
     private PasswordField password;
     
     private int attemptCount = 0;
-    private static final int MAX_ATTEMPTS = 10;
+    private static final int MAX_ATTEMPTS = 5;
 
     /**
      * Initializes the controller class.

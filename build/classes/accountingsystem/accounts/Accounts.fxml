@@ -8,10 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="876.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accountingsystem.accounts.AccountsController">
-    <stylesheets>
-        <URL value="@accounts.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" maxHeight="616.0" maxWidth="876.0" prefHeight="616.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accountingsystem.accounts.AccountsController">
    <children>
       <AnchorPane layoutX="83.0" layoutY="83.0" prefHeight="616.0" prefWidth="876.0" stylesheets="@accounts.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -65,4 +62,7 @@
          </children>
       </AnchorPane>
    </children>
+   <padding>
+      <Insets bottom="30.0" left="15.0" right="15.0" />
+   </padding>
 </AnchorPane>
