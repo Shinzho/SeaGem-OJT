@@ -29,8 +29,8 @@
                         <TableColumn fx:id="addressColumn" prefWidth="75.0" text="Address" />
                         <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="Phone" />
                         <TableColumn fx:id="statusColumn" prefWidth="51.0" text="Status" />
-                        <TableColumn fx:id="roleColumn" prefWidth="99.0" text="Role" />
-                        <TableColumn fx:id="actionColumn" prefWidth="150.0" text="Action" />
+                        <TableColumn fx:id="roleColumn" prefWidth="62.0" text="Role" />
+                        <TableColumn fx:id="actionColumn" prefWidth="187.0" text="Action" />
                     </columns>
                   </TableView>
                   <Button fx:id="addEmployeeBtn" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#openEmployeeForm" prefHeight="23.0" prefWidth="129.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px;" styleClass="buttonClass" stylesheets="@employeemanagement.css" text="Add Employee" />

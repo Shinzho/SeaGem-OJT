@@ -24,7 +24,7 @@
                         <Image url="@../../resources/Gigatechinc2022.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="dashboadBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="6.0" layoutY="102.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Dashboard">
+                  <Button fx:id="dashboadBtn" alignment="CENTER" graphicTextGap="6.0" layoutX="6.0" layoutY="102.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" styleClass="navigationButton" stylesheets="@dashboard.css" text="Dashboard" visible="false">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -127,7 +127,7 @@
             <AnchorPane prefHeight="26.0" prefWidth="1053.0" BorderPane.alignment="CENTER">
                <children>
                   <AnchorPane layoutY="-7.0" prefHeight="43.0" prefWidth="177.0" style="-fx-background-color: #ffffff;" />
-                  <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="455.0" layoutY="2.0" prefHeight="32.0" prefWidth="189.0" text="August 12, 2020 12:00:00" textFill="#21285c">
+                  <Label fx:id="systemDate" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="455.0" layoutY="2.0" prefHeight="32.0" prefWidth="189.0" text="August 12, 2020 12:00:00" textFill="#21285c">
                      <font>
                         <Font size="16.0" />
                      </font>

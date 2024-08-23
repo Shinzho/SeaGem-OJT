@@ -278,7 +278,7 @@ public class EmployeeManagementController implements Initializable, EmployeeData
         Parent newRoot = loader.load();
 
         EmployeeWorkDetailsController wdController = loader.getController();
-        wdController.setEmployeeData(data); // Pass the data here
+        wdController.setEmployeeData(data); 
 
         Stage newStage = new Stage();
         Scene newScene = new Scene(newRoot);
