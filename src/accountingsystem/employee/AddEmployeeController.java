@@ -234,7 +234,7 @@ public class AddEmployeeController implements Initializable {
     @FXML
     private void updateEmployeeBtn(ActionEvent event) {
          if (employeeData == null) {
-            return; // No employee data to update
+            return; 
         }
 
         String fname = addFname.getText();
