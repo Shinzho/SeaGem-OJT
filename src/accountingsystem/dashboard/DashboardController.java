@@ -4,18 +4,27 @@
  */
 package accountingsystem.dashboard;
 
+import accountingsystem.inventory.AddStockController;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import static javax.management.Query.value;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -76,5 +85,40 @@ public class DashboardController implements Initializable {
             
         }
     }
+
+    @FXML
+private void logOut(ActionEvent event) {
+    // Create a confirmation alert
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Logout Confirmation");
+    alert.setHeaderText(null);
+    alert.setContentText("Are you sure you want to log out?");
+
+    // Add buttons to the alert
+    ButtonType yesButton = new ButtonType("Yes");
+    ButtonType noButton = new ButtonType("No");
+    alert.getButtonTypes().setAll(yesButton, noButton);
+
+    Optional<ButtonType> result = alert.showAndWait();
+ 
+    if (result.isPresent() && result.get() == yesButton) {
+         try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/accountingsystem/login/login.fxml"));
+        Parent newRoot = loader.load();
+
+
+        Stage newStage = new Stage();
+        Scene newScene = new Scene(newRoot);
+        newStage.setScene(newScene);
+        newStage.setTitle("Login");
+        newStage.show();
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                currentStage.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    }
+}
+
     
 }

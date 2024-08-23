@@ -117,6 +117,7 @@
                         <Insets right="8.0" />
                      </padding>
                   </Button>
+                  <Button layoutX="53.0" layoutY="542.0" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: #21285C; -fx-text-fill: white;" text="Log Out" />
                </children>
             </AnchorPane>
          </left>
